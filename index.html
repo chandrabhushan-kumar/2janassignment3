@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FizzBuzz</title>
+        <style>
+            body {
+                padding-top:15rem;
+                margin:0;
+                background-color: #f68;
+                font-family: sans-serif;
+                
+            }
+            h1 {
+                background-color: #005;
+                color:#fff; 
+                width:10rem;
+                height: 2.5rem; 
+                text-align: center;
+                 margin-left: 0.5rem;   
+            }
+           div
+            {
+                
+                margin:auto; 
+                width:10.5rem;
+                height:4rem;    
+            }
+button {
+   margin-left:2.5rem;
+   border:none;
+   background-color: darkorange;
+   padding:0.5rem;
+   border: 10px solid blueviolet;
+   font-weight: bolder;
+}
+button:hover {
+    background-color:lightseagreen
+}
+h1:hover {
+    background-color: limegreen;
+}
+input {
+    background-color:khaki;
+    border: 10px solid green;
+}
+
+        </style>
+    </head>
+    <body>
+        <div>
+        <h1>Game</h1>
+        <input type="number" id="i1" placeholder="Enter any positive number"/>
+        <br>
+        <br>
+        <button onclick ="button()">Click Me</button>
+        <p id= "li"></p>
+    </div>
+        <script>
+            function button(){
+                var num = document.getElementById("i1").value;
+                if (num == "") {
+                    alert("enter any number");
+                }
+                for (i=1; i<=num;i++){
+                    var li_ref = document.createElement("LI");
+                    li_ref.innerText = i;
+                
+                    if (i%3 == 0 && i%5 == 0){
+                    li_ref.innerText = "FIZZBUZZ";     
+                }
+                else if (i%5 == 0){
+                    li_ref.innerText = "BUZZ"; 
+                }
+                else if (i%3 == 0) {
+                    li_ref.innerText = "FIZZ";  
+                }
+                else {
+                    li_ref.innerText = i; 
+                }
+                let p_ref = document.getElementById("li");
+                    p_ref.appendChild(li_ref);
+            }
+                
+            }
+            
+            
+        </script>
+    </body>
+</html>
